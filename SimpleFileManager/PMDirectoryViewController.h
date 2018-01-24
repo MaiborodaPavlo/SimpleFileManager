@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PMDirectoryViewController.h
 //  SimpleFileManager
 //
 //  Created by Pavel on 24.01.2018.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface PMDirectoryViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *path;
 
 @end
-
