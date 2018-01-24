@@ -12,6 +12,8 @@
 
 @property (strong, nonatomic) NSArray *contents;
 
+@property (strong, nonatomic) NSString *selectedPath;
+
 @end
 
 @implementation PMDirectoryViewController
@@ -86,6 +88,30 @@
     
     return nil;
     
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath: indexPath animated: YES];
+    
+    if ([self isDirectoryAtIndexPath: indexPath]) {
+        
+        NSString *fileName = [self.contents objectAtIndex: indexPath.row];
+        NSString *path = [self.path stringByAppendingPathComponent: fileName];
+        
+        self.selectedPath = path;
+        [self performSegueWithIdentifier: @"navigateDeep" sender: nil];
+    }
+}
+
+#pragma mark - Segue
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    PMDirectoryViewController *vc = segue.destinationViewController;
+    vc.path = self.selectedPath;
 }
 
 @end

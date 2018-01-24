@@ -71,7 +71,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJn-9Z-qVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <barButtonItem title="Item" id="oNt-5X-feX">
                     <connections>
-                        <segue destination="tZj-Sx-bva" kind="show" id="eU7-VB-QqA"/>
+                        <segue destination="tZj-Sx-bva" kind="show" identifier="navigateDeep" id="eU7-VB-QqA"/>
                     </connections>
                 </barButtonItem>
             </objects>
