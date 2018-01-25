@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) NSString *path;
 
+- (IBAction) actionAlertSheetMenu: (UIBarButtonItem *) sender;
+
 @end
