@@ -39,7 +39,7 @@
     [super viewDidLoad];
 
     if (!self.path) {
-        self.path = @"/Users/pavel/Documents";
+        self.path = @"/Users/pavel/Documents/IOSDevCourse";
     }
     
     // убираем скрытые файлы
