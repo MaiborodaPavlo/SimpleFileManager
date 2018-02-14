@@ -201,6 +201,11 @@
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     
     [alertSheet addAction:cancel];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        alertSheet.popoverPresentationController.barButtonItem = sender;
+        alertSheet.popoverPresentationController.sourceView = self.view;
+    }
 
     [self presentViewController: alertSheet animated:YES completion:nil];
     
